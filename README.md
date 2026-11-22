@@ -16,7 +16,7 @@ Mientras la usas, el PC tiene que estar encendido con esa ventana abierta. Guard
 
 En pantalla estrecha Oficina se adapta: la cinta y la barra de Cálculo son una fila que se desliza con el dedo, Textos empieza en **Vista móvil** (el texto a tamaño de lectura y al ancho de la pantalla; Vista > Diseño de impresión vuelve a las hojas) y en Presentaciones las miniaturas pasan a una tira abajo. Con el dedo: un toque selecciona, doble toque edita una celda o una forma, mantener pulsado abre el menú y las formas y gráficos se arrastran.
 
-Para usarla sin el PC y sin conexión, Oficina ya trae lo necesario (`manifest.webmanifest`, `sw.js` e iconos), pero el móvil solo lo acepta si la página llega por `https`, por ejemplo publicada en GitHub Pages. Si la publicas, quita antes la carpeta `fonts`: esas letras son de tu licencia de Office y no se pueden compartir; sin ellas se verá con una letra parecida.
+**Publicada en https://sergiogomez27-sys.github.io/oficina/** (repositorio público `sergiogomez27-sys/oficina`). Ábrela en el móvil, añádela a la pantalla de inicio y funciona sin el PC y sin conexión. Solo se publica la aplicación: `.gitignore` deja fuera `fonts` (las letras Aptos son de tu licencia de Office; en el móvil se ve con una letra parecida), las pruebas, el servidor y los accesos directos. Para publicar cambios: `git add -A`, `git commit` y `git push`; el móvil coge la versión nueva la siguiente vez que la abre con red. Si cambias la lista de archivos de `sw.js`, sube también el número de `CACHE`.
 
 ## Qué hace
 

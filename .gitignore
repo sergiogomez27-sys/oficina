@@ -1,0 +1,8 @@
+# Solo se publica la aplicacion. Las letras Aptos van con la licencia de Office de este PC.
+fonts/
+tests/
+servidor.js
+Oficina para el movil.cmd
+Oficina.lnk
+*.lnk
+node_modules/

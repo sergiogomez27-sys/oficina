@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#2f4a56">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Oficina">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/oficina.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/oficina-180.png">
+<title>Oficina</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <button class="brand" id="go-home" title="Inicio"><span class="brand-mark" aria-hidden="true"></span>Oficina</button>
+    <div class="qat" id="qat" hidden>
+      <button id="qat-save" title="Guardar (Ctrl+G)" aria-label="Guardar"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 2.5h9l2 2v9h-11z"/><path d="M5 2.5v3.5h5V2.5M5 13.5V9h6v4.5"/></svg></button>
+      <button id="qat-undo" title="Deshacer (Ctrl+Z)" aria-label="Deshacer"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3 2 6l3 3M2 6h7a4 4 0 0 1 0 8H6"/></svg></button>
+      <button id="qat-redo" title="Rehacer (Ctrl+Y)" aria-label="Rehacer"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 3 3 3-3 3M14 6H7a4 4 0 0 0 0 8h3"/></svg></button>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Documentos abiertos"></nav>
+    <div class="doc-actions" id="doc-actions" hidden>
+      <span class="save-state" id="save-state" role="status"></span>
+      <button id="btn-print" class="btn">Imprimir</button>
+      <button id="btn-save" class="btn primary" title="Ctrl+G">Guardar</button>
+    </div>
+  </header>
+  <main id="workspace"></main>
+  <div id="notice" class="notice" role="alert" hidden></div>
+</div>
+<input type="file" id="file-open" accept=".docx,.xlsx,.xlsm,.pptx" multiple hidden>
+<script src="vendor/jszip.min.js"></script>
+<script src="core/ooxml.js"></script>
+<script src="core/formula.js"></script>
+<script src="core/cf.js"></script>
+<script src="core/chart.js"></script>
+<script src="core/tablestyles.js"></script>
+<script src="core/pivot.js"></script>
+<script src="core/funcinfo.js"></script>
+<script src="core/samples.js"></script>
+<script src="core/menu.js"></script>
+<script src="core/ribbon.js"></script>
+<script src="formats/docx.js"></script>
+<script src="formats/xlsx.js"></script>
+<script src="formats/pptx.js"></script>
+<script src="apps/writer.js"></script>
+<script src="apps/sheet.js"></script>
+<script src="apps/slides.js"></script>
+<script src="core/shell.js"></script>
+<script src="core/touch.js"></script>
+<script>
+  // Sin conexion e instalable: solo cuando se sirve por https o desde localhost (desde file:// no hace falta).
+  if ('serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

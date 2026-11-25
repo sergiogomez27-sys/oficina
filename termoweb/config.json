@@ -1,0 +1,34 @@
+{
+  "ubicacion": { "nombre": "Zarautz", "lat": 43.2843, "lon": -2.1696, "zona_horaria": "Europe/Madrid" },
+
+  "radiadores": "todos",
+
+  "horario": {
+    "lunes":     ["7-9", "12-21"],
+    "martes":    ["7-9", "12-21"],
+    "miercoles": ["7-9", "12-21"],
+    "jueves":    ["7-9", "12-21"],
+    "viernes":   ["7-9", "12-21"],
+    "sabado":    ["7-21"],
+    "domingo":   ["7-21"]
+  },
+
+  "temperaturas": { "confort": 20, "eco": 17, "antihielo": 7 },
+
+  "ajuste_clima": {
+    "activo": true,
+    "confort": [
+      { "si_sensacion_menor_de": 5,  "sumar": 1.0 },
+      { "si_sensacion_menor_de": 10, "sumar": 0.5 },
+      { "si_sensacion_menor_de": 15, "sumar": 0 },
+      { "si_sensacion_menor_de": 18, "sumar": -1.0 },
+      { "si_sensacion_menor_de": 99, "sumar": -2.0 }
+    ],
+    "eco": [
+      { "si_minima_menor_de": 2,  "sumar": 1.0 },
+      { "si_minima_menor_de": 6,  "sumar": 0.5 },
+      { "si_minima_menor_de": 99, "sumar": 0 }
+    ],
+    "limites": { "confort": [18, 22], "eco": [15, 18.5] }
+  }
+}

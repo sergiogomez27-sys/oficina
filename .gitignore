@@ -6,3 +6,7 @@ Oficina para el movil.cmd
 Oficina.lnk
 *.lnk
 node_modules/
+
+# Datos de acceso a TermoWeb: nunca se suben
+termoweb/credenciales.json
+termoweb/registro.txt
